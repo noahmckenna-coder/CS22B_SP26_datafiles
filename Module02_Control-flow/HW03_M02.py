@@ -26,7 +26,9 @@ employees = [
 ]
 
 ### Part A: Calculate the average performance score for each employee
-Alice = employees[0]
+for e in employees:
+    avg_score = sum(e["performance_scores"]) / len(e["performance_scores"])
+    e["average_score"] = avg_score
 
 ### Part B: Classify each employee based on the average performance score and print out the classification for each employee
 ## Let's make this a function so we can reuse it in Part D
@@ -34,7 +36,7 @@ def employee_classification (employees):
     ec_list = []
     for e in employees:
         avg_score = sum(e["performance_scores"]) / len(e["performance_scores"])
-        e["average_score"] = avg_score # Store average score in the employee dictionary
+        e["average_score"] = avg_score
 
         if avg_score >= 4.5:
             classification = "Excellent"
@@ -42,13 +44,12 @@ def employee_classification (employees):
             classification = "Good"
         else:
             classification = "Needs Improvement"
-        e["classification"] = classification # Store classification in the employee dictionary
+        e["classification"] = classification
         print(f"{e['name']}: Average Score = {avg_score:.2f}, Classification = {classification}")
         ec_list.append(e)
     return ec_list
 
 ec_list = employee_classification(employees)
-
 
 ### Part C. Find the employee with the highest salary in the "Engineering" department, and
 highest_salary = 0
