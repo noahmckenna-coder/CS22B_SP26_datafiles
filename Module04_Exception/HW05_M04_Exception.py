@@ -1,5 +1,5 @@
 ### CS 22B Module 03 - Homework 5
-### Name: <Your Name>
+### Name: Noah McKenna
 
 ##### Homework to practice writing Exceptions #####
 
